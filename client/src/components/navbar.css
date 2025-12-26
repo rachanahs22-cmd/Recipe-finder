@@ -1,0 +1,184 @@
+/* Navbar Redesign */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Brand */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FF7043;
+    /* Orange Brand Color */
+    text-decoration: none;
+    gap: 10px;
+    font-family: 'DM Serif Display', serif;
+    /* Premium font if available, else fallback */
+}
+
+/* Center Navigation */
+.navbar-center {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 18px;
+    border-radius: 25px;
+    background: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid transparent;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    background: white;
+    color: #FF7043;
+}
+
+.nav-link.active {
+    background: #FF7043;
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 112, 67, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Right Actions */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-icon {
+    cursor: pointer;
+    color: #444;
+    padding: 5px;
+}
+
+.btn-new-recipe {
+    text-decoration: none;
+    color: #FF7043;
+    border: 1px solid #FF7043;
+    padding: 8px 16px;
+    border-radius: 20px;
+    /* Pill shape */
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-new-recipe:hover {
+    background: #FFF3E0;
+}
+
+/* Profile Dropdown */
+.profile-container {
+    position: relative;
+}
+
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    background: #FF7043;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px #ffe0b2;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 250px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid #eee;
+    overflow: hidden;
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-header {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: left;
+}
+
+.user-email {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #444;
+    font-size: 0.95rem;
+    transition: background 0.1s;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    background: none;
+    text-align: left;
+}
+
+.dropdown-item:hover {
+    background: #f9f9f9;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: #f0f0f0;
+    margin: 5px 0;
+}
+
+.text-red {
+    color: #e74c3c;
+}
+
+.text-red:hover {
+    background: #fff5f5;
+}

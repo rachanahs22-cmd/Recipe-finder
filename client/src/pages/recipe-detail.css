@@ -1,0 +1,326 @@
+/* Recipe Detail Redesign - Final Premium Look */
+
+/* --- Hero & Header --- */
+.rd-hero {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 0;
+}
+
+.rd-container {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    margin: 280px auto 3rem;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    padding-top: 2.5rem;
+}
+
+/* Tags */
+.rd-tags {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.rd-tag {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.rd-tag.green {
+    background: #E8F5E9;
+    color: #2E7D32;
+    border: 1px solid #C8E6C9;
+}
+
+.rd-tag.yellow {
+    background: #FFF8E1;
+    color: #Fbc02d;
+    border: 1px solid #FFF59D;
+}
+
+.rd-tag.outline {
+    background: white;
+    border: 1px solid #ddd;
+    color: #555;
+}
+
+/* Typography */
+.rd-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.8rem;
+    color: #2d3436;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.rd-description {
+    color: #636e72;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+/* Author */
+.rd-author-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 2.5rem;
+}
+
+.rd-avatar {
+    width: 45px;
+    height: 45px;
+    background: #C4A484;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Stats Strip */
+.rd-stats-strip {
+    display: flex;
+    justify-content: space-around;
+    background: #FAF9F6;
+    padding: 2rem;
+    border-radius: 20px;
+    margin-bottom: 2.5rem;
+}
+
+.rd-stat-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.rd-stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d3436;
+}
+
+.rd-stat-label {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* --- Navigation Tabs --- */
+.rd-tabs {
+    display: flex;
+    background: #f5f0eb;
+    /* Light beige/grey from screenshot */
+    border-radius: 50px;
+    padding: 5px;
+    margin-bottom: 2rem;
+}
+
+.rd-tab {
+    flex: 1;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #888;
+    transition: all 0.2s;
+}
+
+.rd-tab.active {
+    background: white;
+    color: #2d3436;
+    /* Dark text */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    /* Soft shadow */
+}
+
+/* --- Ingredients List --- */
+.ingredients-section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem;
+    color: #2d3436;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ingredients-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    /* Removing gap to use border-bottom */
+}
+
+.ingredient-card {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    /* Added horizontal padding */
+    border-bottom: 1px solid #f0f0f0;
+    gap: 20px;
+    /* Increased gap */
+    transition: all 0.2s ease;
+    border-left: 4px solid transparent;
+    /* Prepare for hover effect */
+}
+
+.ingredient-card:first-child {
+    border-top: 1px solid #f0f0f0;
+}
+
+.ingredient-card:hover {
+    background: #fafafa;
+    border-left: 4px solid #81C784;
+    /* Teal/Green visual cue on hover */
+}
+
+.checkbox-circle {
+    width: 26px;
+    /* Slightly larger */
+    height: 26px;
+    border: 2px solid #b0b0b0;
+    /* Softer grey */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
+}
+
+.ingredient-card:hover .checkbox-circle {
+    border-color: #81C784;
+}
+
+.ingredient-card.checked .checkbox-circle {
+    background: #81C784;
+    /* Soft Green */
+    border-color: #81C784;
+}
+
+.ing-text {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.ingredient-name {
+    font-size: 1.05rem;
+    color: #444;
+    font-weight: 500;
+}
+
+.ingredient-card.checked .ingredient-name {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.ingredient-amount {
+    font-size: 0.95rem;
+    color: #888;
+}
+
+/* Instructions */
+.instruction-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.step-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.step-badge {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #FF7043 0%, #FF5722 100%);
+    /* Orange gradient */
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.3);
+    margin-top: 2px;
+    /* Visual alignment with text cap-height */
+}
+
+.step-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.step-text {
+    line-height: 1.6;
+    color: #444;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.step-tip {
+    background: #FFF9C4;
+    /* Light Yellow */
+    border: 1px solid #FFF59D;
+    color: #795548;
+    /* Brownish text for contrast */
+    padding: 12px 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+.step-tip-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
